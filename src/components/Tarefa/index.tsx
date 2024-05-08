@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import * as S from './styles'
 import { remover, editar } from '../../store/reducers/tarefas'
 import TarefaClass from '../../models/tarefa'
+import { BotaoSalvar } from '../../styles'
 
 type Props = TarefaClass
 
@@ -45,7 +46,7 @@ const Tarefa = ({
       <S.BarrasAcoes>
         {estaEditando ? (
           <>
-            <S.BotaoSalvar
+            <BotaoSalvar
               onClick={() => {
                 dispatch(
                   editar({
@@ -59,7 +60,7 @@ const Tarefa = ({
               }}
             >
               Salvar
-            </S.BotaoSalvar>
+            </BotaoSalvar>
             <S.BotaoCancelarRemover onClick={cancelarEdicao}>
               Cancelar
             </S.BotaoCancelarRemover>
